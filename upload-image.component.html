@@ -1,0 +1,21 @@
+<div class="uploader-ctn">
+  <div class="form-group">
+    <label for="profileImage" class="col-md-4 control-label">Profile image:</label>
+    <div class="col-md-8">
+      <div class="image-uploader-ctn" *ngIf="!loadedImage">
+        <input type="file" accept=".jpg, .jpeg, .png" class="image-uploader-input" id="profileImage" (change)="handleFileSelect($event)"
+          style="opacity:0; z-index:2; cursor:pointer">
+        <div class="icon-ctn">
+          <span class="icon">
+            <i class="glyphicon glyphicon-camera"></i>
+          </span>
+        </div>
+        <p class="upload-label text-center">Upload Image</p>
+      </div>
+      <div class="img-preview-ctn" *ngIf="loadedImage">
+        <span class="glyphicon glyphicon-trash remove-icon" (click)="removeLoadedImage()"></span>
+        <img [src]="loadedImage" class="loaded-img">
+      </div>
+    </div>
+  </div>
+</div>
